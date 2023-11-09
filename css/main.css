@@ -49,8 +49,11 @@ html {
 .slider__item {
   max-height: 75vh;
   overflow: hidden;
-  cursor: pointer;
   transition: transform var(--tra), box-shadow var(--tra);
+}
+
+.slider_main .slider__item {
+  cursor: pointer;
 }
 
 .slider__img {

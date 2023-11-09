@@ -20,12 +20,19 @@ const sliderBg = new Swiper(".slider_bg", {
   parallax: true,
   spaceBetween: 60,
   slidesPerView: 3.5,
+  allowTouchMove: false,
 });
 
 sliderMain.controller.control = sliderBg;
 
-document.querySelectorAll(".slider__item").forEach((item) => {
+document.querySelectorAll(".slider_main .slider__item").forEach((item) => {
   item.addEventListener("click", (event) => {
+    const openedItem = document.querySelector(
+      ".slider_main .slider__item.opened"
+    );
+    if (openedItem && openedItem !== item) {
+      return;
+    }
     item.classList.toggle("opened");
   });
 });
